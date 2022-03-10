@@ -13,6 +13,9 @@ if not is_tree then
   return
 end
 
+-- Hidden left markers folder.
+vim.g.nvim_tree_indent_markers = 1
+
 -- Icons folder.
 vim.g.nvim_tree_icons = {
   default = '|',
