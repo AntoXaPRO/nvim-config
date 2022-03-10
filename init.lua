@@ -3,6 +3,13 @@ require 'settings'
 
 -- Packer manager.
 require 'manager'
+
+local is_packer = pcall(require, 'packer')
+if not is_packer then
+  print('Not Packer!!!')
+  return
+end
+
 require 'themes'
 require 'plugins'
 

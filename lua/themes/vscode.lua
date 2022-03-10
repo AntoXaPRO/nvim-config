@@ -15,3 +15,6 @@ end
 
 -- Config.
 vscode.change_style('dark')
+
+-- Set theme.
+vim.cmd [[colorscheme vscode]]
