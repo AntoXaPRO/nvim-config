@@ -6,7 +6,7 @@ local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 -- Download Packer.
 if fn.empty(fn.glob(install_path)) > 0 then
   print('Download Packer')
-  packer_bootstrap = fn.system({
+  fn.system({
     'git',
     'clone',
     '--depth',
@@ -14,7 +14,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     'https://github.com/wbthomason/packer.nvim',
     install_path
   })
-  print('Download completed, reload NeoVim!')
+  print('Download completed!')
   return
 end
 
