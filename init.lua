@@ -4,9 +4,9 @@ require 'settings'
 require 'manager'
 
 -- Check packer magager.
-local packer = require('packer')
-if not packer then
-  print('Not Packer!!!')
+local status_ok = pcall(require, 'packer')
+if not status_ok then
+  print('Not Packer...')
   return
 end
 
