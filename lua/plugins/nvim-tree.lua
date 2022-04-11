@@ -21,13 +21,10 @@ vim.g.nvim_tree_icons = {
   default = '|',
   symlink = '>',
   folder = {
-    -- arrow_open = '',
-    -- arrow_closed = '',
     default = '+',
     open = '-',
     empty = '+',
     empty_open = '-',
-    -- symlink = '>'
   }
 }
 
