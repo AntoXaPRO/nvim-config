@@ -14,7 +14,7 @@ if not is_tree then
 end
 
 -- Hidden left markers folder.
-vim.g.nvim_tree_indent_markers = 1
+-- vim.g.nvim_tree_indent_markers = 1
 
 -- Icons folder.
 vim.g.nvim_tree_icons = {
@@ -36,6 +36,11 @@ tree.setup {
   actions = {
     open_file = {
       quit_on_open = 0
+    }
+  },
+  renderer = {
+    indent_markers = {
+      enable = true
     }
   }
 }
