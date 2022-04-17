@@ -14,6 +14,7 @@ opt.shiftwidth = 2              -- the number of spaces inserted for each indent
 opt.numberwidth = 2
 
 opt.number = true               -- number lines
+opt.relativenumber = true       -- relative numbers
 opt.colorcolumn = '79'          -- code right border
 opt.cursorline = true           -- line cursor
 opt.showmode = false            -- disable show mode
@@ -27,20 +28,22 @@ opt.updatetime = 300
 -- Mappings.
 vim.g.mapleader = ' '
 
--- local keymap = vim.api.nvim_set_keymap
--- local opts = { noremap = true, silent = true }
+local keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
 
--- Navigate buffers
--- keymap('n', '<A-h>', ':bprevious<CR>', opts)
--- keymap('n', '<A-l>', ':bnext<CR>', opts)
+-- Show Explore.
+keymap('n', '<A-e>', ':Explore<CR>', opts)
 
--- Navigate tabs
--- keymap('n', '<A-j>', ':tabprevious<CR>', opts)
--- keymap( 'n', '<A-k>', ':tabnext<CR>', opts)
+-- Tabs.
+keymap('n', '<C-Right>', ':tabnext<CR>', opts)
+keymap('n', '<C-Left>', ':tabprevious<CR>', opts)
+
+keymap('n', '<C-S-Right>', ':+tabmove<CR>', opts)
+keymap('n', '<C-S-Left>', ':-tabmove<CR>', opts)
 
 -- Formating
-vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+vim.cmd [[command! Format execute 'lua vim.lsp.buf.formatting()']]
 
 -- Config foldings.
-vim.cmd [[autocmd BufWinLeave *.* mkview]]
-vim.cmd [[autocmd BufWinEnter *.* silent loadview]]
+-- vim.cmd [[autocmd BufWinLeave *.* mkview]]
+-- vim.cmd [[autocmd BufWinEnter *.* silent loadview]]

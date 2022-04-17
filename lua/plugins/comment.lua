@@ -4,14 +4,18 @@ if not status_ok then
 end
 
 -- Init.
-packer.use 'numToStr/Comment.nvim'
+packer.use {
+  'terrortylor/nvim-comment',
+  config = function()
+    require('nvim_comment').setup()
+  end
+}
 
 -- Check.
-local is_comment, comment = pcall(require, 'Comment')
-if not is_comment then
-  print('Comment not found')
-  return
-end
+-- local is_comment, comment = pcall(require, 'Comment')
+-- if not is_comment then
+--  print('Comment not found')
+--  return
+-- end
 
 -- Config.
-comment.setup {}

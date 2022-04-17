@@ -44,9 +44,7 @@ local handlers = require('lsp.handlers')
 
 -- Config.
 lsp_installer.on_server_ready(function(server)
-  local opts = {
-    on_attach = handlers.on_attach
-  }
+  local opts = { on_attach = handlers.on_attach }
 
   -- Add additional capabilities supported by nvim-cmp
   local is_cmp_lsp, cmp_lsp = pcall(require, 'cmp_nvim_lsp')

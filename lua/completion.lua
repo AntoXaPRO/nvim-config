@@ -10,25 +10,30 @@ packer.use 'hrsh7th/cmp-nvim-lua'
 packer.use 'hrsh7th/cmp-nvim-lsp'
 packer.use 'hrsh7th/cmp-buffer'
 
+-- packer.use 'L3MON4D3/LuaSnip' -- Snippets plugin
 -- packer.use 'saadparwaiz1/cmp_luasnip'
-packer.use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
--- Check.
+-- Check CMP.
 local is_cmp, cmp = pcall(require, 'cmp')
 if not is_cmp then
   print('NvimCmp not found')
   return
 end
 
--- L3MON4D3/LuaSnip setup
-local luasnip = require('luasnip')
+-- Check - L3MON4D3/LuaSnip setup
+-- local is_luasnip, luasnip = pcall(require, 'luasnip')
+-- if not is_luasnip then
+--   print('Not lualnip')
+--   return
+-- end
 
 cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end
-  },
+  -- snippet = {
+  --   expand = function(args)
+  --     -- vim.fn["vsnip#anonymous"](args.body)
+  --     -- luasnip.lsp_expand(args.body)
+  --   end
+  -- },
   mapping = {
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -41,6 +46,7 @@ cmp.setup {
   },
   sources = {
     { name = 'path' },
+    -- { name = 'luasnip' },
     { name = 'nvim_lua' },
     { name = 'nvim_lsp' },
     { name = 'buffer', keyword_length = 5 },

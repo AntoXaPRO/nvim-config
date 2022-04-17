@@ -1,9 +1,10 @@
 require 'plugins.nvim-web-devicons'
-require 'plugins.nvim-tree'
 require 'plugins.nvim-treesitter'
 require 'plugins.nvim-autopairs'
-require 'plugins.telescope'
+require 'plugins.nvim-tree'
 require 'plugins.toggleterm'
-require 'plugins.comment'
+require 'plugins.telescope'
+
 require 'plugins.lualine-nvim'
+require 'plugins.comment'
 require 'plugins.null-ls'

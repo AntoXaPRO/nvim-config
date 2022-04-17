@@ -1,6 +1,4 @@
--- General settings.
 require 'settings'
--- Packer manager.
 require 'manager'
 
 -- Check packer magager.
@@ -15,7 +13,9 @@ require 'plugins'
 
 -- Completion.
 require 'completion'
+
 -- LSP.
 require 'lsp'
+
 -- COC.
 -- require 'coc'
